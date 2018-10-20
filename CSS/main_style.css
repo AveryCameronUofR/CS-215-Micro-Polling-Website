@@ -1,0 +1,72 @@
+@CHARSET "UTF-8";
+body{
+
+}
+*{
+  font-family: "Times New Roman", Times, serif;
+  color: black;
+}
+header,footer{
+  background-color: #2da330;
+  font-size: 60px;
+  text-align: center;
+}
+
+#copyright{
+  font-size: 10px;
+  text-align: right;
+}
+
+#signup{
+  text-align: center;
+  background-color: #bfffce;
+}
+#background{
+  background-color: #bfffce;
+}
+.resultsContainer{
+  display: flex;
+  flex = 1, 0, 100px;
+  flex-direction: row;
+  box-sizing: border-box;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+#container-align{
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+}
+
+input[type="submit"]{
+  background-color:#bfffce;
+  padding-left:  60px;
+  padding-right: 60px;
+}
+
+input[type="submit"]:hover{
+  background-color:#2da330;
+}
+
+nav ul{
+  list-style-type: none;
+  overflow: hidden;
+  background-color: #bfffce;
+}
+nav li{
+  display: inline-block;
+}
+nav a{
+  display: block;
+  text-align:center;
+  padding: 5px;
+  text-transform: uppercase;
+}
+
+nav a:hover{
+  display: block;
+  background-color: #2da330;
+  text-align:center;
+  text-transform: uppercase;
+}
