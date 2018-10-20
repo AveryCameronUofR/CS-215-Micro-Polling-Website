@@ -2,7 +2,9 @@
 <html>
 	<head>
     <link rel = "stylesheet" type = "text/css"  href = "../CSS/main_style.css">
-    <meta charset="UTF-8">
+		<script type="text/javascript" src="../JavaScript/LoginCheck.js"></script>
+
+		<meta charset="UTF-8">
     <title>Login</title>
 	</head>
 	<body>
@@ -25,12 +27,16 @@
 			</ul>
 		</nav>
 
-		<form id = signup>
+		<form id = login class = formStyle method="post">
+			<label class = "warning" id = "emailWarn"></label><br>
 			<input type="text" name = "email" placeholder="Email or Username"><br>
+			<label class = "warning" id = "passwordWarn"></label><br>
       <input type="password" name = "password" placeholder="Password"><br>
 			<input type="submit" value="Submit">
+			<p id = "success"></p>
 		</form>
 
+		<script type = "text/javascript" src = "../JavaScript/Login-r.js"></script>
     <footer>
       <img src="../Images/poll_header.png" alt = "poll" style="width: 120px;height: 100px">
       Pollify

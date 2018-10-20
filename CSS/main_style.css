@@ -11,13 +11,16 @@ header,footer{
   font-size: 60px;
   text-align: center;
 }
-
+.warning{
+  color: red;
+  text-decoration: underline;
+}
 #copyright{
   font-size: 10px;
   text-align: right;
 }
 
-#signup{
+.formStyle{
   text-align: center;
   background-color: #bfffce;
 }
