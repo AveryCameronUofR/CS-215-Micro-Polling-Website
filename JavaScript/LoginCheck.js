@@ -6,7 +6,7 @@ function validateLogin(event){
   var password = elements[1].value;
 
   var emailCheck = /^\w+@[a-zA-Z_0-9]+?\.[a-zA-Z]{2,3}$/
-	var passwordCheck = /^[a-zA-z0-9-]+\d+$/;
+	var passwordCheck = /[0-9]*[a-zA-Z_0-9]+[0-9]*/;
 
   document.getElementById("emailWarn").innerHTML = "";
   document.getElementById("passwordWarn").innerHTML = "";
