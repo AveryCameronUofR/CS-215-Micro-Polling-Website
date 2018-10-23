@@ -6,8 +6,8 @@
 */
 function checkDate(inputDate){
     //gets the days from the substring in from DD/MM/YYYY
-    var days = inputDate.substring(0,2);
-    var months = inputDate.substring(3,5);
+    var days = inputDate.substring(3,5);
+    var months = inputDate.substring(0,2);
     var years = inputDate.substring(6,11);
     //turns the strings into integer values
     var intDay = parseInt(days);

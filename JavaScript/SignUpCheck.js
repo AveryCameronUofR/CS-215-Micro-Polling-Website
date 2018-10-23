@@ -12,7 +12,7 @@ function validateSignUp(event){
     // declare variables for valid input in regular expression for email, username and password
     var emailResult = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
     var unameResult = /^[a-zA-Z0-9_-]+$/;
-    var birthResult = /[0-3][0-9][/][0-1][0-9][/][0-9]{4}/;
+    var birthResult = /[0-1][0-9][/][0-3][0-9][/][0-9]{4}/;
     var passwordResult = /^(\S*)?\d+(\S*)?$/;
 
 
@@ -45,14 +45,14 @@ function validateSignUp(event){
   	} else if (birthResult.test(birthday) == true){
       validBirthday = checkDate(birthday)
       if (validBirthday == false){
-        	document.getElementById("birthWarn").innerHTML = "Ensure valid days and months";
+        	document.getElementById("birthWarn").innerHTML = "Ensure valid days and months in form MM/DD/YYYY";
           result = false;
       } else {
         result = true;
       }
 
   	} else if (birthResult.test(birthday) == false){
-      document.getElementById("birthWarn").innerHTML = "Birthday must be in proper format (DD/MM/YYYY)";
+      document.getElementById("birthWarn").innerHTML = "Birthday must be in proper format (MM/DD/YYYY)";
       result = false;
     }
 
