@@ -44,9 +44,22 @@ function validateSignUp(event){
   		result = false;
   	} else if (birthResult.test(birthday) == true){
       validBirthday = checkDate(birthday)
-      if (validBirthday == false){
-        	document.getElementById("birthWarn").innerHTML = "Ensure valid days and months in form MM/DD/YYYY";
-          result = false;
+      if (validBirthday == 1){
+         document.getElementById("birthWarn").innerHTML = "Month is not valid, can't be greater than 12";
+         result = false;
+      } else if (validBirthday == 2){
+         document.getElementById("birthWarn").innerHTML = "Current month cannot exceed 31 days";
+         result = false;
+      } else if (validBirthday == 3){
+         document.getElementById("birthWarn").innerHTML = "Current month cannot exceed 30 days";
+         result = false;
+      }
+      else if (validBirthday == 4){
+         document.getElementById("birthWarn").innerHTML = "February is a leap year, max 29 days";
+         result = false;
+      } else if (validBirthday == 5){
+         document.getElementById("birthWarn").innerHTML = "February is not a leap year, max 28 days";
+         result = false;
       } else {
         result = true;
       }

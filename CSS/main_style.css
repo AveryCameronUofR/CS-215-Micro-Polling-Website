@@ -52,6 +52,15 @@ input[type="submit"]:hover{
   background-color:#2da330;
 }
 
+input[type="text"]{
+  width: 350px;
+}
+
+#question-box{
+  width: 350px;
+  height: 100px;
+}
+
 nav ul{
   list-style-type: none;
   overflow: hidden;

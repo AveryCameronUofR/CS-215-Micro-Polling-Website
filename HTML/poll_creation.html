@@ -2,6 +2,9 @@
 <html>
 	<head>
     <link rel = "stylesheet" type = "text/css"  href = "../CSS/main_style.css">
+		<script type="text/javascript" src="../JavaScript/pollCheck.js"></script>
+		<script type="text/javascript" src="../JavaScript/validationChecks.js"></script>
+		<script type="text/javascript" src="../JavaScript/charCounter.js"></script>
     <meta charset="UTF-8">
     <title>Poll Creation</title>
 	</head>
@@ -25,18 +28,44 @@
 			</ul>
 		</nav>
 
-		<form id = signup>
+		<form id = "createPoll" class = formStyle method = "post">
+			<label class = "warning" id= "nameWarn" ></label><br>
 			<input type="text" name = "pollName" placeholder="Poll Name"><br>
-			<input type="text" name = "PollQuestion" placeholder="Poll Question"><br>
-			<input type="text" name = "option1"placeholder="Option 1"><br>
-      <input type="text" name = "option2"placeholder="Option 2"><br>
-      <input type="text" name = "option3"placeholder="Option 3 (N/A for empty)"><br>
-      <input type="text" name = "option4"placeholder="Option 4 (N/A for empty)"><br>
-      <input type="text" name = "option5"placeholder="Option 5 (N/A for empty)"><br>
-			<span>Start Date</span><input type="date" name = "startDate"><br>
-			<span>End Date  </span><input type="date" name = "endDate"><br>
+
+			<label  class = "warning"  id= "questionWarn"></label><br>
+			<label id = "qCounter">150 characters remaining</label><br>
+			<textarea id = "questionInput" name="question" cols = 50 rows = 5 placeholder="Question"></textarea><br>
+
+			<label  class = "warning" id="option1Warn"></label><br>
+			<label id = "op1Count">50 characters remaining</label><br>
+			<input type="text" id = "opInput1" name = "option1" placeholder="Option 1"><br>
+
+			<label  class = "warning" id="option2Warn"></label><br>
+			<label id = "op2Count">50 characters remaining</label><br>
+      <input type="text" id = "op2Input" name = "option2" placeholder="Option 2"><br>
+
+			<label  class = "warning" id="option3Warn"></label><br>
+			<label id = "op3Count">50 characters remaining</label><br>
+      <input type="text" id = "op3Input" name = "option3" placeholder="Option 3"><br>
+
+			<label  class = "warning" id="option4Warn"></label><br>
+			<label id = "op4Count">50 characters remaining</label><br>
+      <input type="text" id = "op4Input" name = "option4" placeholder="Option 4"><br>
+
+			<label  class = "warning" id="option5Warn"></label><br>
+			<label id = "op5Count">50 characters remaining</label><br>
+      <input type="text" id = "op5Input" name = "option5" placeholder="Option 5"><br>
+
+			<label  class = "warning" id="startWarn"></label><br>
+			<input type="text" name = "startDate" placeholder="Start Date MM/DD/YYYY 08:00"><br>
+
+			<label  class = "warning" id="endWarn"></label><br>
+			<input type="text" name = "endDate" placeholder="End Date MM/DD/YYYY 16:40"><br>
+
 			<input type="submit" value="Submit">
 		</form>
+
+		<script type = "text/javascript" src = "../JavaScript/Poll-r.js"></script>
     <footer>
       <img src="../Images/poll_header.png" alt = "poll" style="width: 120px;height: 100px">
       Pollify
