@@ -17,7 +17,7 @@ function updateOpCount(event){
   }
   if (counter <= max){
     document.getElementById(targetId).innerHTML = (counter + '/' + (remaining-counter));
-    event.target.className = "";
+    document.getElementById(targetId).className = "warning"
   } else {
     document.getElementById(targetId).innerHTML = (counter  + ' character limit exceeded by ' + (remaining-counter)*-1);
     document.getElementById(targetId).className = "warning"
