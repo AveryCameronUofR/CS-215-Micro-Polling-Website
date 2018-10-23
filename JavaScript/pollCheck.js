@@ -12,7 +12,8 @@ function validatePoll(event){
     var startDate = elements[7].value;
     var endDate = elements[8].value;
     //declare variables used for date verification
-    var startTime, endTime, openDate, closeDate;
+    var startTime, endTime, openDate, closeDate, currDate;
+    currDate = new Date();
     var tempDate, tempYear;
 
     var result = true;
@@ -147,7 +148,7 @@ function validatePoll(event){
               if (openDate > closeDate){
                 result = false;
                 document.getElementById("endWarn").innerHTML = "End date must be later than start date";
-              } else if (openDate < date.now()){
+              } else if (openDate < currDate){
                 result = false;
                 document.getElementById("startWarn").innerHTML = "Start date cannot start before current time";
               }
@@ -190,7 +191,6 @@ function validatePoll(event){
         return false;
     }
     if(result == true){
-      document.getElementById("success").innerHTML="Successful Submission";
       return false;
     }
 

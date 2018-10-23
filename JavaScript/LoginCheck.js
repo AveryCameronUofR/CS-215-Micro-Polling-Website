@@ -6,7 +6,7 @@ function validateLogin(event){
   var password = elements[1].value;
 
   var emailCheck = /^\w+@[a-zA-Z_0-9]+?\.[a-zA-Z]{2,3}$/
-	var passwordCheck = /[0-9]*[a-zA-Z_0-9]+[0-9]*/;
+	var passwordCheck = /^(\S*)?\d+(\S*)?$/;
 
   document.getElementById("emailWarn").innerHTML = "";
   document.getElementById("passwordWarn").innerHTML = "";
@@ -23,7 +23,7 @@ function validateLogin(event){
   if (password== null || password== ""){
 		document.getElementById("passwordWarn").innerHTML = "Password cannot be left blank";
 		check = false;
-	} else if (passwordCheck.test(password) == false || password.length < 8){
+	} else if ((!passwordCheck.test(password)) || password.length < 8){
 		document.getElementById("passwordWarn").innerHTML = "Please enter a valid password (8+ characters, at least one non-letter)";
 		check = false;
 	}
