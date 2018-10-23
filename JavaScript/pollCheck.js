@@ -160,6 +160,30 @@ function validatePoll(event){
       validEnd = false;
     }
 
+    if (empty3 == true ){
+      if (empty4 != true){
+        document.getElementById("option4Warn").innerHTML = "Option 4 cannot be filled if option 3 is empty";
+        result = false;
+        if (empty5 != true){
+          document.getElementById("option5Warn").innerHTML = "Option 5 cannot be filled if option 3 is empty";
+          result = false;
+        }
+      } else {
+        if (empty5 != true){
+          document.getElementById("option5Warn").innerHTML = "Option 5 cannot be filled if option 3 is empty";
+          result = false;
+        }
+      }
+
+    } else {
+      if (empty4 == true){
+        if (empty5 != true){
+          document.getElementById("option5Warn").innerHTML = "Option 5 cannot be filled if option 4 is empty";
+          result = false;
+        }
+      }
+    }
+
       //prevent form to be submitted if one of above field is invalid
     if(result == false ){
         event.preventDefault();
