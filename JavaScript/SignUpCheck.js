@@ -10,7 +10,7 @@ function validateSignUp(event){
     var result = true;
 
     // declare variables for valid input in regular expression for email, username and password
-    var birthResult = /[0-1][0-9][/][0-3][0-9][/][0-9]{4}/;
+    var birthResult = /[0-1][0-9][//][0-3][0-9][//][0-9]{4}/;
 
     //sets warnings to blank
     document.getElementById("emailWarn").innerHTML ="";

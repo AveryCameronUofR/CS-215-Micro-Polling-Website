@@ -21,7 +21,7 @@ function validatePoll(event){
     var validStart, validEnd = false;
 
     //checks for proper format (using numbers in each pos)
-    var dateResult = /[0-1][0-9][/][0-3][0-9][/][0-9]{4}[ ][0-2][0-9][:][0-5][0-9]/;
+    var dateResult = /[0-1][0-9][//][0-3][0-9][//][0-9]{4}[ ][0-2][0-9][:][0-5][0-9]/;
 
     //blanks warnings
     document.getElementById("nameWarn").innerHTML ="";
