@@ -9,12 +9,13 @@ function updateOpCount(event){
   var remaining;
   var max;
   if (op != 0){
-    remaining = 50;
+    remaining = 50; //number is associated with one of the options not main question
     max = 50;
   } else {
     remaining = 100;
     max = 100;
   }
+  //updates counter label, changes class to warning if value exceeded
   if (counter <= max){
     document.getElementById(targetId).innerHTML = (counter + '/' + (remaining-counter));
     document.getElementById(targetId).className = ""

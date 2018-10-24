@@ -70,3 +70,39 @@ function checkDate(inputDate){
       }
     }
 }
+
+/*
+ * checks if the email is in valid format (someone@some.com)
+ */
+function emailCheck(email){
+	var emailTest = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+	if (emailTest.test(email) == false){
+		return false;
+	} else {
+		return true;
+	}
+}
+
+/*
+ * checks username for spaces
+ */
+function unameCheck(username){
+	var unameResult = /^[a-zA-Z0-9_-]+$/;
+	if (unameResult.test(username) == false){
+		return false;
+	} else {
+		return true;
+	}
+}
+
+/*
+ * checks password for at least 1 numeral
+ */
+function passwordCheck(password){
+	var passwordResult = /^(\S*)?\d+(\S*)?$/;
+	if (passwordResult.test(password) == false){
+		return false;
+	} else {
+		return true;
+	}
+}

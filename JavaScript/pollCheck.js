@@ -23,6 +23,7 @@ function validatePoll(event){
     //checks for proper format (using numbers in each pos)
     var dateResult = /[0-1][0-9][/][0-3][0-9][/][0-9]{4}[ ][0-2][0-9][:][0-5][0-9]/;
 
+    //blanks warnings
     document.getElementById("nameWarn").innerHTML ="";
     document.getElementById("questionWarn").innerHTML ="";
     document.getElementById("option1Warn").innerHTML ="";
@@ -33,13 +34,15 @@ function validatePoll(event){
     document.getElementById("startWarn").innerHTML ="";
     document.getElementById("endWarn").innerHTML ="";
 
-
     if (name == null || name == "" ){
       result = false;
       document.getElementById("nameWarn").innerHTML = "Poll name cannot be left blank";
     }
 
 
+    /*
+     * each textarea /input text has a event listener for key down that updates remaining chars
+     */
     if (question == null || question == "" ){
       result = false;
       document.getElementById("questionWarn").innerHTML = "Question cannot be left blank";
@@ -161,6 +164,7 @@ function validatePoll(event){
       validEnd = false;
     }
 
+    //if 3 is empty (4 and 5 have to be too) if 4 is empty(5 must be too)
     if (empty3 == true ){
       if (empty4 != true){
         document.getElementById("option4Warn").innerHTML = "Option 4 cannot be filled if option 3 is empty";

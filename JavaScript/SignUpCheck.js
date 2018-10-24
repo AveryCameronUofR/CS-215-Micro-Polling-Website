@@ -10,23 +10,22 @@ function validateSignUp(event){
     var result = true;
 
     // declare variables for valid input in regular expression for email, username and password
-    var emailResult = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
-    var unameResult = /^[a-zA-Z0-9_-]+$/;
     var birthResult = /[0-1][0-9][/][0-3][0-9][/][0-9]{4}/;
-    var passwordResult = /^(\S*)?\d+(\S*)?$/;
 
-
+    //sets warnings to blank
     document.getElementById("emailWarn").innerHTML ="";
     document.getElementById("unameWarn").innerHTML ="";
     document.getElementById("birthWarn").innerHTML ="";
     document.getElementById("passwordWarn").innerHTML ="";
     document.getElementById("passCheckWarn").innerHTML ="";
 
-
+    /*
+     * checks if the input is valid (will call to functions in validationChecks.js to confirm format)
+     */
     if (email == null || email == ""){
   		document.getElementById("emailWarn").innerHTML = "Email cannot be left blank";
   		result = false;
-	  } else if (emailResult.test(email) == false){
+	  } else if (emailCheck(email) == false){
   		document.getElementById("emailWarn").innerHTML = "Please Enter your email address in this format: username@somewhere.sth";
   		result = false;
 	  }
@@ -34,11 +33,14 @@ function validateSignUp(event){
   	if (username == null || username == ""){
   		document.getElementById("unameWarn").innerHTML = "Username cannot be left blank";
   		result = false;
-  	} else if (unameResult.test(username) == false){
+  	} else if (unameCheck(username) == false){
   		document.getElementById("unameWarn").innerHTML = "Username cannot contain leading or trailing spaces";
   		result = false;
   	}
 
+  	/*
+  	 * checks if the birthday is valid with a function call to checkDate in validationCheck.js
+  	 */
     if (birthday == null || birthday == ""){
   		document.getElementById("birthWarn").innerHTML = "Birthday cannot be left blank";
   		result = false;
@@ -69,10 +71,11 @@ function validateSignUp(event){
       result = false;
     }
 
+    	//checks password and confirm password
   	if (password== null || password== ""){
   		document.getElementById("passwordWarn").innerHTML = "Password cannot be left blank";
   		result = false;
-  	} else if (passwordResult.test(password) == false || password.length < 8){
+  	} else if (!passwordCheck(password)|| password.length < 8){
   		document.getElementById("passwordWarn").innerHTML = "Please enter a valid password (8+ characters, at least one non-letter)";
   		result = false;
   	}
