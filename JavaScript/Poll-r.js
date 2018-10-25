@@ -4,4 +4,4 @@ document.getElementById("opInput1").addEventListener("keyup", updateOpCount, fal
 document.getElementById("opInput2").addEventListener("keyup", updateOpCount, false);
 document.getElementById("opInput3").addEventListener("keyup", updateOpCount, false);
 document.getElementById("opInput4").addEventListener("keyup", updateOpCount, false);
-document.getElementById("opInput5").addEventListener("keyup", updateOpCount, false)
+document.getElementById("opInput5").addEventListener("keyup", updateOpCount, false);

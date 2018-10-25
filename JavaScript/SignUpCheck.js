@@ -1,4 +1,4 @@
-function validateSignUp(event){
+function validateSignUp(event) {
     var elements = event.currentTarget;
 
     var email = elements[0].value;
@@ -13,11 +13,11 @@ function validateSignUp(event){
     var birthResult = /[0-1][0-9][//][0-3][0-9][//][0-9]{4}/;
 
     //sets warnings to blank
-    document.getElementById("emailWarn").innerHTML ="";
-    document.getElementById("unameWarn").innerHTML ="";
-    document.getElementById("birthWarn").innerHTML ="";
-    document.getElementById("passwordWarn").innerHTML ="";
-    document.getElementById("passCheckWarn").innerHTML ="";
+    document.getElementById("emailWarn").innerHTML = "";
+    document.getElementById("unameWarn").innerHTML = "";
+    document.getElementById("birthWarn").innerHTML = "";
+    document.getElementById("passwordWarn").innerHTML = "";
+    document.getElementById("passCheckWarn").innerHTML = "";
 
     /*
      * checks if the input is valid (will call to functions in validationChecks.js to confirm format)
