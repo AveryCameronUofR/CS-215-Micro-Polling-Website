@@ -10,7 +10,7 @@ function validateSignUp(event) {
     var result = true;
 
     // declare variables for valid input in regular expression for email, username and password
-    var birthResult = /[0-1][0-9][//][0-3][0-9][//][0-9]{4}/;
+    var birthResult = /[0-9]{4}[//][0-1][0-9][//][0-3][0-9]/;
 
     //sets warnings to blank
     document.getElementById("emailWarn").innerHTML = "";
@@ -62,12 +62,9 @@ function validateSignUp(event) {
       } else if (validBirthday == 5){
          document.getElementById("birthWarn").innerHTML = "February is not a leap year, max 28 days";
          result = false;
-      } else {
-        result = true;
       }
-
   	} else if (birthResult.test(birthday) == false){
-      document.getElementById("birthWarn").innerHTML = "Birthday must be in proper format (MM/DD/YYYY)";
+      document.getElementById("birthWarn").innerHTML = "Birthday must be in proper format (YYYY/MM/DD)";
       result = false;
     }
 

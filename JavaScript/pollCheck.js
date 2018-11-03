@@ -21,7 +21,7 @@ function validatePoll(event){
     var validStart, validEnd = false;
 
     //checks for proper format (using numbers in each pos)
-    var dateResult = /[0-1][0-9][//][0-3][0-9][//][0-9]{4}[ ][0-2][0-9][:][0-5][0-9]/;
+    var dateResult = /[0-9]{4}[//][0-1][0-9][//][0-3][0-9][ ][0-2][0-9][:][0-5][0-9]/;
 
     //blanks warnings
     document.getElementById("nameWarn").innerHTML ="";
@@ -114,7 +114,7 @@ function validatePoll(event){
     	  }
         //startDate did not pass the regex
     }else if (dateResult.test(startDate) == false){
-        document.getElementById("startWarn").innerHTML = "Start Date must be in proper format (MM/DD/YYYY 00:00)";
+        document.getElementById("startWarn").innerHTML = "Start Date must be in proper format (YYYY/MM/DD 00:00)";
         result = false;
         validStart = false;
     }
@@ -146,20 +146,25 @@ function validatePoll(event){
           //if the end date is valid and the startDate is valid (0)
            if (validStart ==  0){
               //create 2 new dates, compare to ensure the close isn't before open and open isn't before current time
-              openDate = new Date(startDate);
-              closeDate = new Date(endDate);
-              if (openDate > closeDate){
-                result = false;
-                document.getElementById("endWarn").innerHTML = "End date must be later than start date";
-              } else if (openDate < currDate){
-                result = false;
-                document.getElementById("startWarn").innerHTML = "Start date cannot start before current time";
+
+              openTime = checkTime(startDate);
+              closeTime = checkTime(endDate);
+              if (openTime == true && closeTime == true) {
+                openDate = new Date(startDate);
+                closeDate = new Date(endDate);
+                if (openDate > closeDate){
+                  result = false;
+                  document.getElementById("endWarn").innerHTML = "End date must be later than start date";
+                } else if (openDate < currDate){
+                  result = false;
+                  document.getElementById("startWarn").innerHTML = "Start date cannot start before current time";
+                }
               }
            }
 
          }
   	} else if (dateResult.test(endDate) == false){
-      document.getElementById("endWarn").innerHTML = "End Date must be in proper format (MM/DD/YYYY 00:00)";
+      document.getElementById("endWarn").innerHTML = "End Date must be in proper format (YYYY/MM/DD 00:00)";
       result = false;
       validEnd = false;
     }

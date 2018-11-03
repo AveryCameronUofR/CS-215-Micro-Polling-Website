@@ -12,10 +12,10 @@
 * 5 if february and 30 day max
 */
 function checkDate(inputDate){
-    //gets the days from the substring in from DD/MM/YYYY
-    var days = inputDate.substring(3,5);
-    var months = inputDate.substring(0,2);
-    var years = inputDate.substring(6,11);
+    //gets the days from the substring in from YYYY/MM/DD
+    var years = inputDate.substring(0,4);
+    var months = inputDate.substring(5,7);
+    var days = inputDate.substring(8,10);
     //turns the strings into integer values
     var intDay = parseInt(days);
     var intMonth = parseInt(months);
@@ -71,6 +71,20 @@ function checkDate(inputDate){
     }
 }
 
+function checkTime(inputDate){
+  var hours = inputDate.substring(11,13);
+  var mins = inputDate.substring(14,16);
+  var intHour = parseInt(hours);
+  var intMins = parseInt(mins);
+  var valid = true;
+  if (intHour < 0 || intHour > 23){
+    valid = false;
+  }
+  if (intMins < 0 || intMins > 59){
+    valid = false;
+  }
+  return valid;
+}
 /*
  * checks if the email is in valid format (someone@some.com)
  */
